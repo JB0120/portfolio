@@ -1,0 +1,85 @@
+header{
+  width: 1900px;
+  min-width: 1200px;
+  height: 40px;
+  margin: 20px auto 120px;
+}
+.gnb{
+  width: 980px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.gnb > .logo > a{
+  display: flex;
+  align-items: center;
+}
+.gnb > .logo p{
+  font-family: "AppleSDGothicNeoB";
+  font-size: 14px;
+  line-height: 16px;
+  padding-left: 8px;
+}
+nav, .nav, .login{
+  display: flex;
+  justify-content: space-between;
+}
+nav{
+  width: 736px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  position: relative;
+}
+.nav > li{
+  padding: 0 20px;
+}
+.nav > li > a{
+  transition: all 0.3s;
+}
+.nav > li.on > a{
+  color: #ffd369; 
+}
+.nav > li.on > ul{
+  display: flex;
+}
+.login > li:hover{
+  color: #ffd369;
+}
+.login{
+  width: 155px;
+  font-size: 14px;
+}
+.login img{margin-top: 8px;}
+.sub{
+  width: 980px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  display: none;
+}
+.sub > li{
+  padding:0 15px;
+  position: relative;
+}
+.sub > li.on{
+  color: #ffd369;
+}
+.sub .line{
+  width: 0%;
+  height: 2px;
+  background-color: #ffd369;
+  position: absolute;
+  right: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+}
+.sub > li:hover > .line{
+  width: 100%;
+  right: 0;
+}
+.sub > li.on > .line{
+  width: 100%;
+  right: 0;
+}

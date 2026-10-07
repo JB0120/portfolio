@@ -1,0 +1,286 @@
+/*lighting*/
+#lighting, #lamps{display: none;}
+#lighting article{
+  height: 280px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+#lighting article:nth-child(1),
+#lighting article:nth-child(2),
+#lighting article:nth-child(3){
+  float: left;
+}
+#lighting article:nth-child(4),
+#lighting article:nth-child(5),
+#lighting article:nth-child(6),
+#lighting article:nth-child(7),
+#lighting article:nth-child(8),
+#lighting article:nth-child(9),
+#lighting article:nth-child(10),
+#lighting article:nth-child(11),
+#lighting article:nth-child(12){
+  float: right;
+}
+
+
+#lighting article:nth-child(1){width: 25%;}
+#lighting article:nth-child(2){width: 25%;}
+#lighting article:nth-child(3){width: 50%;}
+#lighting article:nth-child(4){width: 25%; height: 560px;}
+#lighting article:nth-child(5){width: 25%;}
+#lighting article:nth-child(6){width: 25%; display: none;}
+#lighting article:nth-child(7){width: 50%;}
+#lighting article:nth-child(8){width: 50%;}
+#lighting article:nth-child(9){width: 25%; display: none;}
+#lighting article:nth-child(10){width: 50%;  display: none;}
+#lighting article:nth-child(11){width: 25%;}
+#lighting article:nth-child(12){width: 100%; height: 160px;}
+
+#lighting article:nth-child(4) .bg{background: url(../img/bg2_2_1200px.png) center/cover;}
+#lighting article:nth-child(7) .bg{background: url(../img/bg2_1_1200px.png) center/cover;}
+#lighting article:nth-child(9) .bg{background: url(../img/bg2_4_768px.png) center/cover;}
+#lighting article:nth-child(11) .bg{background: url(../img/bg2_3_1200px.png) center/cover;}
+
+#lighting article:nth-child(1){position: relative;}
+#lighting article:nth-child(1) .logo{padding: 52px 0 0 29px;}
+
+#lighting article:nth-child(2){
+  background-color: #306048;
+  color: #fff;
+}
+#lighting article:nth-child(2) .txt{
+  line-height: 24px;
+  padding: 60px 0 0 20px;
+  font-size: 40px;
+}
+#lighting article:nth-child(2) span:last-child{
+  font-size: 16px;
+  font-family: "AppleSDGothicNeoL";
+}
+#lighting article:nth-child(3) .gnb li:nth-child(2){color: #111;}
+#lighting article:nth-child(5) .txt{
+  padding: 160px 0 0 26px;
+  transition: all 0.5s;
+}
+#lighting article:nth-child(5) span{display: none;}
+#lighting article:nth-child(5) h2{
+  font-size: 50px;
+  color: #306048;
+  font-family: "Noto Serif";
+  font-weight: normal;
+}
+#lighting article:nth-child(5) p{
+  color: #999;
+  transition: all 0.5s;
+}
+#lighting article:nth-child(6) .txt{display: none;}
+#lighting article:nth-child(8) .txt{
+  max-width: 530px;
+  padding: 200px 0 0 31px;
+  transition: all 0.5s;
+  box-sizing: border-box;
+  color: #999;
+}
+#lighting article:nth-child(10){
+  background-color: #306048;
+  color: #fff;
+}
+#lighting article:nth-child(10) .txt{
+  line-height: 24px;
+  padding: 60px 0 0 20px;
+  font-size: 40px;
+}
+#lighting article:nth-child(10) span:last-child{
+  font-size: 16px;
+  font-family: "AppleSDGothicNeoL";
+}
+#lighting article:nth-child(12){
+  background-color: #306048;
+}
+
+/*lamps*/
+#lamps{
+  background-color: #fff;
+}
+#lamps h2{
+  font-family: "Noto Serif";
+  font-size: 60px;
+  text-align: center;
+  line-height: 80px;
+  margin: 80px 0;
+}
+#lamps .wrap{
+  max-width: 1040px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transition: all 0.5s; 
+}
+#lamps .box{
+  width: 240px;
+  height: 320px;
+  margin: 0px 10px 40px 10px;
+  text-align: center;
+  cursor: pointer;
+}
+#lamps .box img{
+  display: block;
+  width: 100%;
+}
+#lamps .box span{
+  font-family: "AppleSDGothicNeoL";
+  color: #999;
+}
+#lamps .box p:nth-child(3){
+  font-family: "AppleSDGothicNeoB";
+  margin-bottom: 10px;
+}
+#lamps .box:hover p:nth-child(3){
+  color: rgb(199, 108, 108);
+}
+#lamps button{
+  width: 340px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #e1ccb9;
+  color: #333;
+  font-family: "AppleSDGothicNeoL";
+  font-size: 16px;
+  margin: 40px auto 40px;
+}
+#lamps button:hover{
+  background-color: #306048;
+  color: #fff;
+}
+
+@media screen and (max-width:1100px){
+  #lighting article:nth-child(5) .txt{padding: 190px 0 0 26px;}
+  #lighting article:nth-child(5) p{display: none;}
+  #lighting article:nth-child(8) {background-color: #306048;}
+  #lighting article:nth-child(8) p{display: none;}
+  #lighting article:nth-child(12){display: none;}
+  #lamps .wrap{max-width: 800px;}
+}
+
+@media screen and (max-width:980px){
+  #lighting article:nth-child(1){width: 33.3333%;}
+  #lighting article:nth-child(2){width: 25%; display: none;}
+  #lighting article:nth-child(3){width: 66.6666%;}
+  #lighting article:nth-child(4){width: 33.3333%;}
+  #lighting article:nth-child(5){width: 16.6666%;}
+  #lighting article:nth-child(7){width: 50%;}
+  #lighting article:nth-child(8){width: 25%; display: none;}
+  #lighting article:nth-child(10){width: 33.3333%; display: block;}
+  #lighting article:nth-child(11){width: 33.3333%;}
+  
+  #lighting article:nth-child(5) h2,
+  #lighting article:nth-child(5) p{
+    display: none;
+  }
+}
+
+@media screen and (max-width:768px){
+  #lighting article:nth-child(1){width: 33.3333%; height: 140px;}
+  #lighting article:nth-child(3){width: 66.6666%; height: 140px;}
+  #lighting article:nth-child(4){width: 33.3333%; height: 380px;}
+  #lighting article:nth-child(5){width: 33.3333%; height: 140px;}
+  #lighting article:nth-child(6){width: 33.3333%; height: 140px; display: block;}
+  #lighting article:nth-child(7){width: 66.6666%; height: 240px;}
+  #lighting article:nth-child(9){width: 33.3333%; height: 240px; display: block;}
+  #lighting article:nth-child(10){width: 33.3333%; height: 240px;}
+  #lighting article:nth-child(11){width: 33.3333%; height: 240px;}
+
+  .gnb li{
+    font-size: 14px;
+    margin-right: 25px;
+  }
+  .gnb i{right: 10px;}
+  #lighting article:nth-child(5) .txt{
+    padding: 0;
+  }
+  #lighting article:nth-child(5) span{
+    display: block;
+    color: #306048;
+    font-size: 40px;
+    text-indent: 10px;
+  }
+  #lighting article:nth-child(6){
+    background-color: #306048;
+  }
+  #lighting article:nth-child(10) .txt{display: none;}
+  #lamps .wrap{max-width: 520px;}
+  #lamps .box{margin: 0 0 40px 0;}
+  #lamps h2{
+    font-size: 36px;
+    line-height: 40px;
+    margin: 80px 0;
+  }
+}
+@media screen and (max-width:640px){
+  .gnb ul{margin: 40px 0 0 10px;}
+  .gnb li{margin-right: 10px;}
+  .gnb i{display: none;}
+
+}
+@media screen and (max-width:480px){
+  #lighting article:nth-child(1){width: 100%; height: 80px;}
+  #lighting article:nth-child(3){width: 100%; height: 240px; display: none;}
+  #lighting article:nth-child(4){width: 33.3333%; height: 240px;}
+  #lighting article:nth-child(5){ display: none;}
+  #lighting article:nth-child(6){width: 66.6666%; height: 120px;}
+  #lighting article:nth-child(7){display: none;}
+  #lighting article:nth-child(8){display: none;}
+  #lighting article:nth-child(9){display: none}
+  #lighting article:nth-child(10){width: 33.3333%; height: 120px;}
+  #lighting article:nth-child(11){width: 33.3333%; height: 120px;}
+
+  section{min-width: 480px;}
+  #lighting article:nth-child(1) .logo{
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+  }
+  #lighting article:nth-child(3){
+    position: absolute;
+    top: 80px; left: 0;
+  }
+  #lighting article.on{display: block;}
+  .gnb{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 999;
+    font-family: "AppleSDGothicNeoB";
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .gnb ul{margin: 0;}
+  .gnb li{
+    float: none;
+    line-height: 60px;
+    margin: 0;
+  }
+  .gnb li:hover{
+    background-color: #e1ccb9;
+  }
+
+  #lighting article:nth-child(6){
+    background-color: #306048;
+    color: #fff;
+  }
+  #lighting article:nth-child(6) .txt{
+    display: block;
+    line-height: 24px;
+    padding: 25px 0 0 20px;
+    font-size: 30px;
+  }
+  #lighting article:nth-child(6) span:last-child{
+    font-size: 14px;
+    font-family: "AppleSDGothicNeoL";
+  }
+  #lighting article:nth-child(10){
+    background-color: #fff;
+  }
+}

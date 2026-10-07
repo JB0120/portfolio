@@ -1,0 +1,302 @@
+@charset "UTF-8";
+
+body { background: #081028; }
+
+/* Layout START */
+.dashboard {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 116px auto auto 266px;
+    gap: 18px;
+    padding: 24px;
+}
+
+.dashboard .row,
+.dashboard .card-wrap {
+    display: grid;
+    gap: 16px;
+}
+
+.dashboard .row.row-1 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.dashboard .row.row-2,
+.dashboard .row.row-3 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.dashboard .row.row-2 .card-wrap,
+.dashboard .row.row-3 .card-wrap{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.dashboard .row.row-4 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.dashboard .row .card {
+    background: #1A2544;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.dashboard .card-tit-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+}
+
+.dashboard .card-tit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.dashboard .card-tit h3 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.dashboard .card-tit-sub {
+    color: #818286;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+/* Layout END */
+
+/* Device START */
+
+.device-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.device-wrap .device-badge {
+    display: flex;
+    padding: 2px 20px 2px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(8, 16, 40, 1);
+    background-color: rgba(8, 16, 40, 0.8);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+    text-indent: -9999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.device-wrap .device-badge::before {
+    display: block;
+    content: '';
+    text-indent: 0;
+}
+
+.device-wrap.rise .device-badge {
+    border: 1px solid #135E51;
+    background: #16454B url(../images/arrow-rise.svg) right 8px center no-repeat;
+}
+
+.device-wrap.drop .device-badge {
+    border: 1px solid #6D2E41;
+    background: #482A42 url(../images/arrow-drop.svg) right 8px center no-repeat;
+}
+
+.device-wrap.rise .device-badge::before {
+    content: '상승';
+    color: #12D378;
+}
+
+.device-wrap.drop .device-badge::before {
+    content: '하락';
+    color: #EC1A30;
+}
+
+.device-wrap .card-tit .icon-circle {
+    width: 32px;
+    height: 32px;
+    padding: 6px;
+    border-radius: 16px;
+    background: #fff;
+    text-indent: -9999em;
+    overflow: hidden;
+}
+
+.device-total .card-tit .icon-circle {
+    background: #126651 url(../images/plus-circle.svg) center no-repeat;
+}
+
+.device-monitoring .card-tit .icon-circle {
+    background: #12577C url(../images/monitor.svg) center no-repeat;
+}
+
+.device-task .card-tit .icon-circle {
+    background: #5F492F url(../images/checkmark.svg) center no-repeat;
+}
+
+.device-error .card-tit .icon-circle {
+    background: #5F2C41 url(../images/close-circle.svg) center no-repeat;
+}
+
+.device-wrap .device-sum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.device-wrap .device-num-box {
+    display: flex;
+    gap: 4px;
+}
+
+.device-wrap .device-sum-sub {
+    color: #818286;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+}
+
+.device-wrap .device-num {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.device-wrap.rise .device-num {
+    color: #12D378;
+}
+
+.device-wrap.drop .device-num {
+    color: #EC1A30;
+}
+
+.device-wrap .dicice-txt {
+    color: #A8A9AD;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+}
+/* Device END */
+
+/* Chart START */
+.chart-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.chart-wrap .chart-cont {
+    height: calc(100% - 44px);
+    background: #1E272F;
+    /*임시 차트 영역*/
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+    /*임시 차트 영역*/
+}
+/* Chart END */
+
+/* Table START */
+    .table_wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .table_wrap .dashboard-table {
+        border-radius: 4px;
+        border: 1px solid rgba(255, 255, 255, 0.20);
+        border-spacing: 0;
+        overflow: hidden;
+    }
+
+    .table_wrap .dashboard-table th{
+        height: 32px;
+        color: #FFF;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.20);
+    }
+
+    .table_wrap .dashboard-table td{
+        height: 30px;
+        color: #FFF;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 15px;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        border-right: 1px solid rgba(255, 255, 255, 0.20);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+        background: rgba(255, 255, 255, 0.10);
+    }
+
+    .table_wrap .dashboard-table td:last-child {
+        border-right: none;
+    }
+
+    .table_wrap .dashboard-table tr:last-child td {
+        border-bottom: none;
+    }
+
+    .table_wrap .dashboard-table .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 2px;
+        background-color: rgba(8, 16, 40, 0.8);
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 15px;
+    }
+
+    .table_wrap .dashboard-table .badge.badge-normal {
+        border: 1px solid #1E6892;
+        background-color: #265377;
+    }
+
+    .table_wrap .dashboard-table .badge.badge-warning {
+        border: 1px solid #767C5B;
+        background-color: #575E58;
+    }
+
+    .table_wrap .dashboard-table .badge.badge-error {
+        border: 1px solid #732D47;
+        background-color: #55324D;
+    }
+
+    .table_wrap .dashboard-table .badge.badge-normal::before {
+        display: block;
+        content: '정상';
+        color: #00E5FF;
+    }
+
+    .table_wrap .dashboard-table .badge.badge-warning::before {
+        display: block;
+        content: '이상';
+        color: #F3F568;
+    }
+
+    .table_wrap .dashboard-table .badge.badge-error::before {
+        display: block;
+        content: '비정상';
+        color: #EC1A30;
+    }
+/* Table END */

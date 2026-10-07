@@ -1,0 +1,248 @@
+@font-face{
+  font-family: 'AppleSDGothicNeoL';
+  src: url(../font/AppleSDGothicNeoL.ttf)format('truetype');
+}
+@font-face{
+  font-family: 'AppleSDGothicNeoB';
+  src: url(../font/AppleSDGothicNeoB.ttf)format('truetype');
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none; color: inherit;}
+button{
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+p{
+  font-family: "AppleSDGothicNeoL";
+  transition: all 0.2s;
+}
+span{font-family: "Noto Serif";}
+body{
+  background-color: #e1ccb9;
+  color: #111;
+}
+section{
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+article > div{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.toggleBtn{
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+  top: 50%; transform: translateY(-50%);
+  display: none;
+}
+.toggleNav li{border: 1px solid #eee;}
+.toggleNav li:hover{
+  background-color: #c0a78f;
+  color: #fff;
+}
+.gnb ul{margin: 40px 0 0 20px;}
+.gnb li{
+  float: left;
+  font-family: "AppleSDGothicNeoB";
+  font-size: 18px;
+  color: #ccc;
+  margin-right: 20px;
+  line-height: 40px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.gnb li:hover{color: #111;}
+.gnb .on{color: #111;}
+.gnb i{
+  position: absolute;
+  right: 33px; top: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.gnb i:hover{color: #666;}
+.gnb i:active{color: #111;}
+
+@media screen and (max-width:1100px){
+  #furniture article:nth-child(7) .txt{padding: 180px 0 0 26px;}
+  #furniture article:nth-child(7) p{display: none;}
+  #furniture article:nth-child(10) {background-color: #e1ccb9;}
+  #furniture article:nth-child(10) p{display: none;}
+  #furniture article:nth-child(13){display: none;}
+  #chairs .wrap{max-width: 800px;}
+}
+
+@media screen and (max-width:980px){
+  #furniture article:nth-child(1){width: 33.3333%;}
+  #furniture article:nth-child(2){width: 25%; display: none;}
+  #furniture article:nth-child(3){width: 66.6666%;}
+  #furniture article:nth-child(6){width: 66.6666%;}
+  #furniture article:nth-child(7){width: 33.3333%;}
+  #furniture article:nth-child(8){width: 25%; display: none;}
+  #furniture article:nth-child(9){width: 33.3333%;}
+  #furniture article:nth-child(10){width: 50%; display: none;}
+  #furniture article:nth-child(11){width: 33.3333%;display: block;}
+  #furniture article:nth-child(12){width: 33.3333%;}
+  
+  article:nth-child(11) .txt{
+    line-height: 40px;
+    padding: 40px 0 0 16px;
+    font-size: 32px;
+    color: #fff;
+    background-color: #e1ccb9;
+  }
+  article:nth-child(11) span:last-child{ font-size: 40px;}
+}
+
+@media screen and (max-width:768px){
+  #furniture article:nth-child(1){width: 33.3333%;}
+  #furniture article:nth-child(3){width: 66.6666%; height: 140px;}
+  #furniture article:nth-child(4){width: 49.9999%; height: 140px; display: block;}
+  #furniture article:nth-child(5){width: 16.6666%; height: 140px; display: block;}
+  #furniture article:nth-child(6){width: 100%; height: 240px;}
+  #furniture article:nth-child(7){width: 33.3333%; display: none;}
+  #furniture article:nth-child(9){width: 33.3333%; height: 240px;}
+  #furniture article:nth-child(11){width: 33.3333%; height: 240px;}
+  #furniture article:nth-child(12){width: 33.3333%; height: 240px;}
+
+  .gnb li{
+    font-size: 14px;
+    margin-right: 25px;
+  }
+  .gnb i{right: 10px;}
+
+  #furniture article:nth-child(4) .txt{
+    line-height: 30px;
+    padding: 50px 0 0 16px;
+    font-size: 26px;
+  }
+  #furniture article:nth-child(4) span:last-child{ font-size: 30px;}
+  #furniture article:nth-child(5){background-color: #e1ccb9;}
+  #furniture article:nth-child(6){
+    color: #fff;
+    text-align: right;
+  }
+  #furniture article:nth-child(6) .txt{
+    display: block;
+    padding: 120px 30px 0 0;
+  }
+  #furniture article:nth-child(6) h2{
+    font-family: "Noto Serif";
+    font-weight: normal;
+    font-size: 50px;
+  }
+
+  #furniture article:nth-child(11) span{display: none;}
+  #chairs .wrap{max-width: 520px;}
+  #chairs .box{margin: 0 0 40px 0;}
+  #chairs h2{
+    font-size: 36px;
+    line-height: 40px;
+    margin: 80px 0;
+  }
+
+  footer .help li,
+  footer .contact li{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:640px){
+  .gnb ul{margin: 40px 0 0 10px;}
+  .gnb li{margin-right: 10px;}
+  .gnb i{display: none;}
+
+  footer .contact p:nth-child(2){
+    display: none;
+  }
+}
+@media screen and (max-width:480px){
+  #furniture article:nth-child(1){width: 100%; height: 80px;}
+  #furniture article:nth-child(3){width: 100%; height: 240px; display: none;}
+  #furniture article:nth-child(4){width: 49.9999%; height: 140px; display: none;}
+  #furniture article:nth-child(5){width: 16.6666%; height: 140px; display: none;}
+  #furniture article:nth-child(6){width: 66.6666%; height: 120px;}
+  #furniture article:nth-child(8){width: 33.3333%; height: 120px; display: block;}
+  #furniture article:nth-child(9){width: 33.3333%; height: 120px;}
+  #furniture article:nth-child(11){width: 33.3333%; height: 120px;}
+  #furniture article:nth-child(12){width: 33.3333%; height: 120px;}
+
+  section{min-width: 480px;}
+  #furniture article:nth-child(1) .logo{
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+  }
+  #furniture article:nth-child(3){
+    position: absolute;
+    top: 80px; left: 0;
+  }
+  #furniture article.on{display: block;}
+  .gnb{
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    z-index: 999;
+    font-family: "AppleSDGothicNeoB";
+    box-sizing: border-box;
+    margin: 0;
+  }
+  .gnb ul{margin: 0;}
+  .gnb li{
+    float: none;
+    line-height: 60px;
+    margin: 0;
+  }
+  .gnb li:hover{
+    background-color: #e1ccb9;
+  }
+
+  #furniture article:nth-child(6) p{display: none;}
+  #furniture article:nth-child(6) h2{
+    font-size: 30px;
+    color: #552e17;
+  }
+  #furniture article:nth-child(6) .txt{
+    padding: 80px 5px 0 0;
+  }
+  #furniture article:nth-child(8) .txt{
+    padding: 20px 0 0 16px;
+    font-size: 12px;
+  }
+  #furniture article:nth-child(8) span{
+    padding: 18px 0 6px 0;
+    line-height: 20px;
+    font-size: 15px;
+    display: block;
+  }
+  #furniture article:nth-child(8) a{
+    color: #999;
+    transition: all 0.3s;
+  }
+  .toggleBtn, .toggleNav{
+    display: block;
+  }
+  footer h3{
+    font-size: 16px;
+    color: #ccc;
+    margin: 40px 0 0 5px;
+  }
+  footer .wrap{
+    display: block;
+    padding: 40px;
+  }
+  footer .contact{
+    display: none;
+  }
+
+}

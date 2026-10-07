@@ -1,0 +1,208 @@
+#info{
+  width: 100%;
+}
+#info .bg{
+  position: absolute;
+  left: 0; top: 0;
+  z-index: -9999;
+}
+#info > .wrap{
+  width: 1020px;
+  margin: auto;
+  padding-top: 60px;
+}
+#info h2{
+  font-size: 40px;
+  font-family: "AppleSDGothicNeoB00";
+  font-weight: normal;
+  color: #ffd369;
+  line-height: 40px;
+  margin-bottom: 80px;
+}
+#info .contain{
+  display: flex;
+  margin-bottom: 80px;
+}
+#info .txtBox{
+  width: 380px;
+  height: 360px;
+  position: relative;
+  margin-right: 20px;
+}
+#info .txtBox .txt{
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 22px;
+}
+#info .txtBox .txt h3{
+  font-size: 28px;
+  font-family: "AppleSDGothicNeoB00";
+  font-weight: normal;
+  color: #ffd369;
+  line-height: 80px;
+  text-indent: 24px;
+}
+#info .txtBox .txt span{
+  font-size: 50px;
+  font-family: "AppleSDGothicNeoB00";
+  line-height: 120px;
+}
+#info .txtBox .txt p{
+  font-size: 16px;
+}
+#info .contain:nth-child(4) .txt{
+  margin-top: 20px;
+}
+#info .contain:nth-child(4) .txt h3{
+  line-height: normal;
+  margin-bottom: 15px;
+}
+#info .contain:nth-child(4) .txt p{
+  margin-bottom: 18px;
+}
+#info .contain:nth-child(5) .txt h3{
+  line-height: normal;
+  margin-bottom: 30px;
+}
+#info .contain:nth-child(5) .txt p{
+  margin-bottom: 18px;
+}
+#info .contain:nth-child(5) .txt p:nth-child(5){
+  color: #f97676;
+}
+#info .imgBox{
+  width: 500px;
+  height: 360px;
+  position: relative;
+  margin-right: 20px;
+}
+#info .txtBox > .lineTop,
+#info .txtBox > .lineBottom{
+  width: 330px;
+  height: 2px;
+  background-color: #666;
+  position: absolute;
+}
+#info .txtBox > .lineLeft,
+#info .txtBox > .lineRight{
+  width: 2px;
+  height: 310px;
+  background-color: #666;
+  position: absolute;
+}
+#info .imgBox > .lineTop,
+#info .imgBox > .lineBottom{
+  width: 450px;
+  height: 2px;
+  background-color: #666;
+  position: absolute;
+}
+#info .imgBox > .lineLeft,
+#info .imgBox > .lineRight{
+  width: 2px;
+  height: 310px;
+  background-color: #666;
+  position: absolute;
+}
+#info .lineTop{
+   left: 50%;
+   transform: translateX(-50%);
+}
+#info .lineBottom{
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+#info .lineLeft{
+  top: 50%;
+  transform: translateY(-50%);
+}
+#info .lineRight{
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+}
+#info .txtBox > .lineTop,
+#info .txtBox > .lineBottom{
+  width: 330px;
+  height: 2px;
+  background-color: #666;
+  position: absolute;
+}
+#info .contain:nth-child(2) > .txtBox{
+  margin-left: 120px;
+}
+#info .contain:nth-child(2) > .imgBox{
+  margin-right: 0;
+  background-image: url(../img/info01.png);
+}
+#info .contain:nth-child(3) > .txtBox{
+  margin-right: 0px;
+}
+#info .contain:nth-child(3) > .imgBox{
+  background-image: url(../img/info02.png);
+}
+#info .contain:nth-child(4) > .txtBox{
+  width: 425px;
+  height: 240px;
+  margin-left: 120px;
+}
+#info .contain:nth-child(4) > .imgBox{
+  width: 455px;
+  height: 240px;
+  margin-right: 0;
+  background-image: url(../img/info03.png);
+}
+#info .contain:nth-child(4) > .txtBox > .lineLeft,
+#info .contain:nth-child(4) > .txtBox > .lineRight{
+  width: 2px;
+  height: 190px;
+}
+#info .contain:nth-child(4) > .txtBox > .lineTop,
+#info .contain:nth-child(4) > .txtBox > .lineBottom{
+  width: 375px;
+  height: 2px;
+}
+#info .contain:nth-child(4) > .imgBox > .lineLeft,
+#info .contain:nth-child(4) > .imgBox > .lineRight{
+  width: 2px;
+  height: 190px;
+}
+#info .contain:nth-child(4) > .imgBox > .lineTop,
+#info .contain:nth-child(4) > .imgBox > .lineBottom{
+  width: 405px;
+  height: 2px;
+}
+#info .contain:nth-child(5){
+  margin-bottom: 200px;
+}
+#info .contain:nth-child(5) > .txtBox{
+  width: 500px;
+  height: 480px;
+  margin-right: 0;
+}
+#info .contain:nth-child(5) > .imgBox{
+  width: 380px;
+  height: 480px;
+  background-image: url(../img/info04.png);
+}
+#info .contain:nth-child(5) > .txtBox > .lineLeft,
+#info .contain:nth-child(5) > .txtBox > .lineRight{
+  width: 2px;
+  height: 430px;
+}
+#info .contain:nth-child(5) > .txtBox > .lineTop,
+#info .contain:nth-child(5) > .txtBox > .lineBottom{
+  width: 450px;
+  height: 2px;
+}
+#info .contain:nth-child(5) > .imgBox > .lineLeft,
+#info .contain:nth-child(5) > .imgBox > .lineRight{
+  width: 2px;
+  height: 430px;
+}
+#info .contain:nth-child(5) > .imgBox > .lineTop,
+#info .contain:nth-child(5) > .imgBox > .lineBottom{
+  width: 330px;
+  height: 2px;
+}

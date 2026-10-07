@@ -1,0 +1,34 @@
+.hores .flip-card{
+  width: 109px;
+  height: 130px;
+  background: transparent;
+  perspective: 1000px;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+.hores .flip-card > .flip-card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: all 0.6s;
+  transform-style: preserve-3d;
+}
+.hores .flip-card .flip-card-front, 
+.hores .flip-card .flip-card-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.hores .flip-card .flip-card-front{
+  background-color: transparent;
+}
+.hores .flip-card .flip-card-back{
+  background-color: transparent;
+  transform: rotateY(180deg);
+}
+.hores .flip-card:hover > .flip-card-inner{
+  transform: rotateY(180deg);
+}

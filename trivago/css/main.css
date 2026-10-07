@@ -1,0 +1,314 @@
+/*main START*/
+#main>.bg{
+  width: 100%;
+  height: 2450px;
+  background: url(../img/bg02.png) center;
+  position: relative;
+  overflow: hidden;
+}
+#main .wrap{
+  width: 980px;
+  height: 1240px;
+  margin: 40px auto;
+}
+#main .wrap .tour{
+  position: relative;
+  margin-top: 120px;
+}
+#main .wrap .tour>h2{
+  font-size: 80px;
+  letter-spacing: -4px;
+  line-height: 120px;
+  font-family: 'AppleSDGothicNeoB';
+  color: rgba(207, 101, 113, 0.7);
+}
+#tour ul{
+  font-family: 'AppleSDGothicNeoB';
+  color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  height: 30px;
+  position: absolute;
+  top: 30px; right: 20px;
+}
+#tour ul > .on{
+  color: #ca4654;
+}
+#tour ul > .on::after{
+  content: "";
+  width: 100%;
+}
+#tour ul::after{
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  background-color:  rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+#tour ul > li{
+  line-height: 24px;
+  position: relative;
+  z-index: 2;
+  padding: 0px 20px;
+  transition: all 0.3s;
+}
+#tour ul > li::after{
+  content: "";
+  width: 0%;
+  height: 4px;
+  position: absolute;
+  bottom: 0px;
+  background-color: #ca4654;
+  border-radius: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s;
+}
+#tour ul > li.on::after{
+  transform: translateX(0);
+  width: 100%;
+  left: 0px;
+}
+#tour ul>li:hover{
+  color: #ca4654;
+  cursor: pointer;
+}
+#tour ul>li:hover::after{
+  right: 0; bottom: 0px;
+  width: 100%;
+}
+#tour>.contents>.thumbs{
+  display: flex;
+  justify-content: space-between;
+}
+#tour>.contents .box{
+  width: 233px;
+  height: 325px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+}
+#tour>.contents .box:nth-child(5),
+#tour>.contents .box:nth-child(6),
+#tour>.contents .box:nth-child(7),
+#tour>.contents .box:nth-child(8){
+  opacity: 0;
+  visibility: hidden;
+}
+#tour>.contents{
+  position: relative;
+}
+#tour>.contents>i{
+  position: absolute;
+  top: 160px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.2s;
+}
+#tour>.contents>i:hover{
+  transform: scale(1.05);
+}
+#tour>.contents>i:active{
+  transform: scale(0.95);
+}
+#tour>.contents>.leftarrow{
+  left: -60px;
+}
+#tour>.contents>.rightarrow{
+  left: 1000px;
+}
+#tour>.contents .box>img{
+  transition: 0.5s;
+}
+#tour>.contents .box>.txt{
+  position: absolute;
+  bottom: 0px;
+  width: 233px;
+  height: 35px;
+  background-color:rgba(153, 153, 153, 0.5);
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  font-family: 'AppleSDGothicNeoB';
+  cursor: pointer;
+}
+#tour>.contents .box i{
+  position: absolute;
+  top: 21px;
+  right: 35px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  transition: 0.25s;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+#tour>.contents .box>.more{
+  text-align: center;
+  color: #ca4654;
+  font-weight: bold;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  display: none;
+}
+#tour>.contents .box:hover{
+  transform: translateY(-35px);
+}
+#tour>.contents .box:hover i{
+  display: block;
+}
+#tour>.contents .box:hover>img{
+  transform: scale(1.1);
+}
+#tour>.contents .box i:hover{
+  color:  #ca4654;
+}
+#tour>.contents .box i.on{
+  color: #ca4654;
+  display: block;
+  font-weight: bold;
+}
+#tour>.contents .box>.txt:hover{
+  color: rgba(255, 255, 255, 0.7);
+}
+/*#tour>.contents .box>.more>i{}*/
+.maincontain>.contents{
+  width: 980px;
+  height: 480px;
+}
+.wrap>#tour>.contents{
+  margin-top: 40px;
+  width: 1976px;
+  height: 440px;
+}
+#main .wrap .plan{
+width: 980px;
+height: 120px;
+margin-bottom: 40px;    
+}
+#main .wrap .plan>p{
+  display: block;
+  padding-top: 20px;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 20px;
+  font-family: 'AppleSDGothicNeoB';
+  color: rgba(122, 122, 122, 0.5);
+}
+#main .wrap .plan>h2{
+  display: block;
+  padding-top: -20px;
+  box-sizing: border-box;
+  height: 80px;
+  font-size: 60px;
+  letter-spacing: -2px;
+  font-family: 'AppleSDGothicNeoB';
+  color: rgba(207, 101, 113, 0.7);
+  line-height: 80px;
+}
+#plan>.contents{
+  display: flex;
+  justify-content: space-between;
+}
+#plan .largebox1{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 15px;
+}
+#plan .largebox1>.txt{
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 190px;
+  height: 40px;
+  border-radius: 0 10px 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 20px;
+}
+#plan .largebox2>.box{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 15px;
+}
+#plan .largebox2 .txt{
+  position: absolute;
+  left: 0;
+  top: 17px;
+  width: 100px;
+  height: 35px;
+  border-radius: 0 10px 10px 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  font-size: 20px;
+}
+#plan .largebox2>.box>.uk{
+  font-size: 14px;
+  letter-spacing: -0.8px;
+}
+.largebox2{
+  display: flex;
+  width: 480px;
+  height: 480px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+.largebox2 img,
+.largebox1>img{
+  display: block;
+  transition: 0.3s;
+}
+#plan .largebox1:hover>img,
+#plan .largebox2>.box:hover>img
+{transform: scale(1.1);}
+#main .bot{
+  width: 980px;
+  height: 520px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 160px;
+  margin-bottom: 80px;
+}
+#main .bot h1{
+  font-size: 50px;
+  font-family: 'AppleSDGothicNeoB';
+  font-weight: normal;
+  color: rgba(207, 101, 113, 0.7);
+  letter-spacing: -5px;
+  line-height: 80px;
+  text-indent: 15px;
+}
+#main .bot .txtbox{
+  width: 480px;
+  height: 440px;
+  background-color: #fff;
+  text-align: justify;
+}
+#main .bot .txtbox > .txt{
+  width: 375px;
+  margin: auto;
+  color: #636363;
+}
+#main .bot .txtbox > .txt:first-child{
+  padding-top: 40px;
+}
+#main .bot .txtbox > .txt:nth-child(2),
+#main .bot .txtbox > .txt:nth-child(3){
+  padding-top: 20px;
+}
+/*main END*/

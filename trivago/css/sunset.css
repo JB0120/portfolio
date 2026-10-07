@@ -1,0 +1,69 @@
+#sunset>.bg{
+  width: 100%;
+  height: 1040px;
+  background: url(../img/bg01.png) center/cover;
+}
+#sunset>.bg>.wrap{
+  width: 1180px;
+  height: 1040px;
+  margin: auto;
+  position: relative;
+}
+
+/*nav START*/
+nav{
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+nav>.logo{
+  position: absolute;
+  left: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+nav>.icon{
+  position: absolute;
+  right: 90px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.icon>li{
+  float: left;
+  cursor: pointer;
+}
+nav>.icon>li:first-child{
+  margin-right: 20px;
+}
+.login{
+  width: 140px;
+  line-height: 40px;
+  text-indent: 13px;
+  height: 81px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  position: absolute;
+  font-size: 14px;
+  right: 0; top: 30px;
+  transition: all 0.3s;
+  display: none;
+}
+.login.on{display: block;}
+.login>li{
+  height: 40px;
+  transition: all 0.3s;
+}
+.login>li:first-child{
+  border-bottom:1px solid rgba(0, 0, 0, 0.7);}
+.login>li:first-child:hover{
+  background-color: #999;
+  border-radius: 10px 10px 0 0;
+  color: #eee;
+}
+.login>li:last-child:hover{
+  background-color: #999;
+  border-radius:0 0 10px 10px;
+  color: #eee;
+}
+/*nav END*/

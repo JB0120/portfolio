@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>대시보드</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="js/common.js"></script>
+        <link rel="stylesheet" href="css/all.css">
+    </head>
+    <body>
+        <div class="dashboard">
+            <div class="row row-1">
+                <div class="card device-wrap device-total">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <div class="icon-circle">등록장비 아이콘</div>
+                            <h3>등록 장비 수</h3>
+                        </div>
+                    </div>
+                    <div class="device-sum">
+                        <div class="device-sum-sub"></div>
+                        <div class="device-num-box">
+                            <div class="device-num">123</div>
+                            <div class="dicice-txt">대</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card device-wrap device-monitoring">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <div class="icon-circle">장비 아이콘</div>
+                            <h3>장비 수</h3>
+                        </div>
+                    </div>
+                    <div class="device-sum">
+                        <div class="device-sum-sub"></div>
+                        <div class="device-num-box">
+                            <div class="device-num">83</div>
+                            <div class="dicice-txt">대</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card device-wrap device-task rise">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <div class="icon-circle">작업 아이콘</div>
+                            <h3>작업 건수</h3>
+                        </div>
+                        <div class="device-badge">상태</div>
+                    </div>
+                    <div class="device-sum">
+                        <div class="device-sum-sub">최근 일주일</div>
+                        <div class="device-num-box">
+                            <div class="device-num">12</div>
+                            <div class="dicice-txt">건</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card device-wrap device-error drop">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <div class="icon-circle">고장 아이콘</div>
+                            <h3>장애 건수</h3>
+                        </div>
+                        <div class="device-badge">상태</div>
+                    </div>
+                    <div class="device-sum">
+                        <div class="device-sum-sub">최근 일주일</div>
+                        <div class="device-num-box">
+                            <div class="device-num">5</div>
+                            <div class="dicice-txt">건</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-2">
+                <div class="card chart-wrap">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <h3>등록 장비수</h3>
+                        </div>
+                        <div class="card-tit-sub"></div>
+                    </div>
+                    <div class="chart-cont">
+                        <canvas id="chart01"></canvas>
+                    </div>
+                </div>
+                <div class="card-wrap">
+                    <div class="card chart-wrap">
+                        <div class="card-tit-box">
+                            <div class="card-tit">
+                                <h3>작업 건수</h3>
+                            </div>
+                            <div class="card-tit-sub">최근 일주일</div>
+                        </div>
+                        <div class="chart-cont">
+                            <canvas id="chart02"></canvas>
+                        </div>
+                    </div>
+                    <div class="card chart-wrap">
+                        <div class="card-tit-box">
+                            <div class="card-tit">
+                                <h3>장애 건수</h3>
+                            </div>
+                            <div class="card-tit-sub">최근 일주일</div>
+                        </div>
+                        <div class="chart-cont">
+                            <canvas id="chart03"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-3">
+                <div class="card chart-wrap">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <h3>장비 수</h3>
+                        </div>
+                        <div class="card-tit-sub"></div>
+                    </div>
+                    <div class="chart-cont">
+                        <canvas id="chart04"></canvas>
+                    </div>
+                </div>
+                <div class="card-wrap">
+                    <div class="card chart-wrap">
+                        <div class="card-tit-box">
+                            <div class="card-tit">
+                                <h3>작업 완료 수</h3>
+                            </div>
+                            <div class="card-tit-sub">최근 일주일</div>
+                        </div>
+                        <div class="chart-cont">
+                            <canvas id="chart05"></canvas>
+                        </div>
+                    </div>
+                    <div class="card chart-wrap">
+                        <div class="card-tit-box">
+                            <div class="card-tit">
+                                <h3>완료 건수 비교</h3>
+                            </div>
+                            <div class="card-tit-sub">최근 일주일</div>
+                        </div>
+                        <div class="chart-cont">
+                            <canvas id="chart06"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row row-4">
+                <div class="card table_wrap">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <h3>향후 예정 작업</h3>
+                        </div>
+                        <div class="card-tit-sub">향후 일주일</div>
+                    </div>
+                    <table class="dashboard-table">
+                        <colgroup>
+                            <col style="width: 25%;">
+                            <col style="width: 25%;">
+                            <col style="width: 25%;">
+                            <col style="width: 25%;">
+                        </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">착수일자</th>
+                                <th scope="col">담당자</th>
+                                <th scope="col">용역명</th>
+                                <th scope="col">건명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025.12.01</td>
+                                <td>홍길동</td>
+                                <td>보안조치</td>
+                                <td>장애 보안 조치</td>
+                            </tr>
+                            <tr>
+                                <td>2026.01.01</td>
+                                <td>홍길동</td>
+                                <td>네트워크 최적화</td>
+                                <td>네트워크 성능 최적화</td>
+                            </tr>
+                            <tr>
+                                <td>2026.06.01</td>
+                                <td>홍길동</td>
+                                <td>네트워크 최적화</td>
+                                <td>장애 보안 조치</td>
+                            </tr>
+                            <tr>
+                                <td>2026.06.01</td>
+                                <td>홍길동</td>
+                                <td>네트워크 최적화</td>
+                                <td>장애 보안 조치</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card table_wrap">
+                    <div class="card-tit-box">
+                        <div class="card-tit">
+                            <h3>점검 상태</h3>
+                        </div>
+                        <div class="card-tit-sub">유지보수 점검</div>
+                    </div>
+                    <table class="dashboard-table">
+                        <colgroup>
+                            <col style="width: 50%;">
+                            <col style="width: 50%;">
+                        </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th scope="col">점검명</th>
+                                <th scope="col">이상여부</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>정기점검</td>
+                                <td><span class="badge badge-normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td>연장점검</td>
+                                <td><span class="badge badge-normal"></span></td>
+                            </tr>
+                            <tr>
+                                <td>수신상태점검</td>
+                                <td><span class="badge badge-warning"></span></td>
+                            </tr>
+                            <tr>
+                                <td>수신상태점검</td>
+                                <td><span class="badge badge-warning"></span></td>
+                            </tr>
+                            <tr>
+                                <td>긴급점검</td>
+                                <td><span class="badge badge-error"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

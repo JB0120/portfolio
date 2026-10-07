@@ -1,0 +1,82 @@
+footer{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-color: #111;
+}
+footer > .wrap{
+  width: 1180px;
+  margin: auto;
+  position: relative;
+}
+footer .etc{
+  width: 680px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 40px;
+  padding: 40px 0;
+}
+footer .adress{
+  line-height: 30px;
+  font-size: 14px;
+}
+footer .sns{
+  font-size: 24px;
+  line-height: 40px;
+  margin: 30px 0 25px;
+}
+footer .sns > a{
+  margin-right: 12px;
+}
+footer .sns > a:hover{
+  color: #eba400;
+}
+footer .imgGroup > img:first-child{
+  margin-right: 15px;
+}
+footer .logo{
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+}
+footer .fsBox{
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 120px;
+}
+footer .fsBox > .familysite{
+  margin-right: 40px;
+  line-height: 30px;
+}
+.familysite > ul{
+  background-color: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none;
+}
+.familysite > p{
+  padding: 10px;
+  cursor: pointer;
+}
+.familysite li{
+  color: #111;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+.familysite:hover{
+  color: #eba400;
+}
+.familysite li:hover{
+  background-color: #eba400;
+}
+.familysite.on > p{
+  color: #eba400;
+}
+.familysite > ul.on{
+  display: block;
+}

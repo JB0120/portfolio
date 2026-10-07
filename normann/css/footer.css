@@ -1,0 +1,65 @@
+/*footer*/
+footer{
+  width: 100%;
+  height: 360px;
+  background-color: #333;
+  position: relative;
+}
+footer .wrap{
+  max-width: 1200px;
+  margin: auto;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+footer h3{
+  font-family: "AppleSDGothicNeoL";
+  font-weight: normal;
+  font-size: 16px;
+  color: #ccc;
+  margin: 40px 0 20px 0;
+}
+footer li{
+  float: left;
+  margin-right: 15px;
+}
+footer li:hover{
+  color: #e1ccb9;
+}
+footer .sns{
+  font-size: 30px;
+}
+footer .contact p:nth-child(2){
+  line-height: 40px;
+}
+footer .logo{
+  position: absolute;
+  bottom: 30px;
+  left: 50%; transform: translateX(-50%);
+}
+
+@media screen and (max-width:768px){
+  footer .help li,
+  footer .contact li{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:640px){
+  footer .contact p:nth-child(2){
+    display: none;
+  }
+}
+@media screen and (max-width:480px){
+  footer h3{
+    font-size: 16px;
+    color: #ccc;
+    margin: 40px 0 0 5px;
+  }
+  footer .wrap{
+    display: block;
+    padding: 40px;
+  }
+  footer .contact{
+    display: none;
+  }
+}
