@@ -1,4 +1,17 @@
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
 $(window).on("load", function() { 
+    // 새로고침 시 최상단으로 이동
+    window.scrollTo(0, 0);
+
+    // 랜딩 화면 초기 상태 설정
+    $("body").addClass("landing");
+    $("#landingContainer").removeClass("is-disappeared");
+    $("header").removeClass("on scroll-up scroll-down");
+    $(".scroll_down").removeClass("on");
+
     const $btn = $("#landingBtn"); 
     const $container = $("#landingContainer"); 
     const $imgs = $(".landing_img"); 
@@ -333,3 +346,32 @@ $(".table_drag").on("mousedown", function(e) {
     $(document).on("mousemove", move);
     $(document).on("mouseup", stop);
 });
+
+function gitAnimation() {
+    const $dots = $(".git_dot");
+    const $boxs = $(".git_box");
+
+    $dots.removeClass("check loading");
+    $boxs.removeClass("on");
+
+
+    // 두 번째 로딩
+    setTimeout(() => {
+        $dots.eq(0).addClass("check");
+        $dots.eq(1).addClass("loading");
+        $boxs.eq(0).addClass("on");
+        $boxs.eq(1).addClass("on");
+    }, 2000);
+
+    // 두 번째 완료
+    setTimeout(() => {
+        $dots.eq(1).removeClass("loading").addClass("check");
+        $dots.eq(2).addClass("check");
+        $boxs.eq(2).addClass("on");
+    }, 4000);
+
+    // 잠시 유지 후 반복
+    setTimeout(gitAnimation, 6000);
+}
+
+gitAnimation();
