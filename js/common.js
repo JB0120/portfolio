@@ -375,3 +375,206 @@ function gitAnimation() {
 }
 
 gitAnimation();
+
+
+function aboutBtnAnimation() {
+    const $btn = $(".animate_btn > .about_btn");
+    const $txt = $btn.find(".btn_txt");
+
+    // 초기화
+    $btn.removeClass("loading check");
+    $txt.text("Creative");
+
+    setTimeout(function() {
+        $btn.addClass("loading");
+        $txt.text("Crafting...");
+    }, 2000);
+
+    setTimeout(function() {
+        $btn.removeClass("loading").addClass("check");
+        $txt.text("Complete");
+    }, 4500);
+
+    setTimeout(function() {
+        $btn.removeClass("check");
+        $txt.text("Creative");
+    }, 8000);
+
+    setTimeout(aboutBtnAnimation, 10000);
+}
+
+aboutBtnAnimation();
+
+
+
+$(function () {
+    const $slider = $(".animate_slide");
+    const $wrap = $slider.find(".slide_wrap");
+
+    const $original = $wrap.children(".slide_box").clone();
+    const originalCount = $original.length;
+
+    const duration = 500;
+    const interval = 2000;
+
+    let currentIndex = 2;
+    let isMoving = false;
+
+    $wrap.prepend($original.clone());
+    $wrap.append($original.clone());
+
+    const $slides = $wrap.children(".slide_box");
+
+    function moveTo(index, animate = true) {
+        const $active = $slides.eq(index + originalCount);
+
+        const targetX =
+            $slider.innerWidth() / 2 -
+            ($active[0].offsetLeft + $active.outerWidth() / 2);
+
+        $wrap.css({
+            transition: animate
+                ? `transform ${duration}ms ease-in-out`
+                : "none",
+            transform: `translate3d(${targetX}px, 0, 0)`
+        });
+    }
+
+    function setActive(index) {
+        $slides.removeClass("on");
+
+        // 동일한 슬라이드의 복제본도 활성화
+        $slides.eq(index).addClass("on");
+        $slides.eq(index + originalCount).addClass("on");
+        $slides.eq(index + originalCount * 2).addClass("on");
+    }
+
+    function nextSlide() {
+        if (isMoving) return;
+
+        isMoving = true;
+        currentIndex++;
+
+        setActive(currentIndex % originalCount);
+        moveTo(currentIndex, true);
+    }
+
+    $wrap.on("transitionend", function (e) {
+        if (e.target !== $wrap[0] ||
+            e.originalEvent.propertyName !== "transform") return;
+
+        if (currentIndex >= originalCount) {
+            currentIndex = 0;
+
+            // 같은 모양의 원본 위치로 즉시 이동
+            moveTo(currentIndex, false);
+        }
+
+        isMoving = false;
+    });
+
+    setActive(currentIndex);
+    moveTo(currentIndex, false);
+
+    setInterval(nextSlide, interval);
+
+    $(window).on("resize", function () {
+        moveTo(currentIndex, false);
+    });
+});
+
+$(function () {
+    const $modal = $(".contact_modal");
+    let $lastFocused = null;
+
+    function closeModal() {
+        $modal.removeClass("on").attr("aria-hidden", "true");
+        $("body").css("overflow", "");
+
+        if ($lastFocused) {
+            $lastFocused.trigger("focus");
+        }
+    }
+
+    $(".contact_btn").on("click", function (e) {
+        e.preventDefault();
+
+        $lastFocused = $(this);
+        $modal.addClass("on").attr("aria-hidden", "false");
+        $("body").css("overflow", "hidden");
+
+        $modal.find(".modal_close").trigger("focus");
+    });
+
+    $(".modal_close").on("click", closeModal);
+
+    // 모달 바깥 영역 클릭
+    $modal.on("click", function (e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
+    // ESC 키로 닫기
+    $(document).on("keydown", function (e) {
+        if (!$modal.hasClass("on")) return;
+
+        if (e.key === "Escape") {
+            closeModal();
+        }
+
+        // 모달 안에서 Tab 포커스 유지
+        if (e.key === "Tab") {
+            const $focusable = $modal.find(
+                'a[href], button:not(:disabled), input:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])'
+            ).filter(":visible");
+
+            if (!$focusable.length) return;
+
+            const first = $focusable[0];
+            const last = $focusable[$focusable.length - 1];
+
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    });
+}); 
+
+$(function () {
+    let copyTimer;
+
+    $(".email_copy").on("click", async function () {
+        const $btn = $(this);
+        const email = $btn.closest(".contact_email")
+                          .find(".email_address")
+                          .text().trim();
+
+        try {
+            await navigator.clipboard.writeText(email);
+
+            clearTimeout(copyTimer);
+
+            $btn.addClass("copied");
+            $btn.find(".copy_txt").text("복사됨!");
+
+            copyTimer = setTimeout(function () {
+                $btn.removeClass("copied");
+                $btn.find(".copy_txt").text("복사");
+            }, 2000);
+
+        } catch (error) {
+            $btn.find(".copy_txt").text("FAILED");
+
+            clearTimeout(copyTimer);
+            copyTimer = setTimeout(function () {
+                $btn.removeClass("copied");
+                $btn.find(".copy_txt").text("복사");
+            }, 2000);
+        }
+    });
+});

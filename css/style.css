@@ -489,33 +489,139 @@ svg.arch {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10rem;
-    height: 3rem;
+    width: 10.8rem;
+    height: 2.4rem;
     border-radius: 3rem;
     background: #f04830;
     color: #FFF;
     position: relative;
-    overflow: hidden;
     text-align: center;
-    transition: all .3s;
+    transition: all .5s;
+}
+
+.animate_btn .about_btn::before {
+    content: "";
+    position: absolute;
+    width: 11.9rem;
+    height: 3.5rem;
+    border: 3px solid #F04830;
+    border-radius: 4rem;
+    transform-origin: center;
+    transition: all .5s;
+    animation: fade 1s ease-in-out infinite;
+}
+
+.animate_btn .about_btn.loading {
+    width: 11rem;
+    height: 2.6rem;
+}
+
+.animate_btn .about_btn.loading::before {
+    width: 12.1rem;
+    height: 3.7rem;
+}
+
+.animate_btn .about_btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 13.8rem;
+    height: 5rem;
+    border: 3px solid #F04830;
+    border-radius: 4rem;
+    transform-origin: center;
+    animation: fade .8s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
 }
 
 .animate_btn .about_btn .btn_txt {
     position: relative;
     transition: all .3s;
     line-height: 3rem;   
+    margin-right: 20px;
+    font-size: 1.1rem;
+}
+
+.animate_btn .about_btn.loading .btn_txt {
     margin-left: 0.5rem;
+    margin-right: 0;
 }
 
 .animate_btn .about_btn .spinner {
     content: "";
     display: inline-block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s;
     width: 20px;
     height: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 4px solid rgba(255, 255, 255, 0.3);
     border-top-color: #fff;
     border-radius: 50%;
-    animation: spinner-rotate 0.8s linear infinite;
+    animation: spinner-fast 2s linear infinite;
+}
+
+.animate_btn .about_btn.loading .spinner {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes spinner-fast {
+    0% {
+        transform: rotate(0deg);
+    }
+    33.333% {
+        transform: rotate(720deg);
+    }
+    66.667% {
+        transform: rotate(1080deg);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
+}
+
+.animate_btn .about_btn .checkmark{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: url('../img/checkmark.png') no-repeat center;
+    background-size: contain;
+    transition: all .3s;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%) scale(0);
+}
+
+.animate_btn .about_btn.check .spinner {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(0) !important;
+}
+
+.animate_btn .about_btn.check .checkmark {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(-50%) scale(1);
+}
+
+.animate_btn .about_btn.check .btn_txt {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+.animate_btn .about_btn.check::before {
+    animation: fade 1s ease-in-out;
 }
 
 .animate_git {
@@ -657,8 +763,8 @@ svg.arch {
     background: linear-gradient(
         to right,
         #FBFBF9 0%,
-        transparent 35%,
-        transparent 65%,
+        transparent 15%,
+        transparent 85%,
         #FBFBF9 100%
     );
     pointer-events: none;
@@ -671,36 +777,89 @@ svg.arch {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem;
+    width: max-content;
+    height: 126px;
+    will-change: transform;
 }
 
 .slide_box {
+    flex: 0 0 5rem;
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
     background: #CCC;
-    transition: all .3s;
+    transition: all .5s ease;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .slide_box.on {
+    flex: 0 0 6rem;
     width: 6rem;
     height: 6rem;
-    background: #f04830;
 }
 
 .slide_box .slide_icon {
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 3rem;
+    height: 3rem;
     transition: all .3s;
     background-repeat: no-repeat;
     background-position: center;   
     background-size: contain;
 }
 
+.slide_box.on .slide_icon {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.slide_box .slide_icon.star{
+    background-image: url('../img/star.png');
+}
+
+.slide_box .slide_icon.rocket{
+    background-image: url('../img/rocket.png');
+}
+
 .slide_box .slide_icon.bulb{
     background-image: url('../img/bulb.png');
+}
+
+.slide_box .slide_icon.pencil{
+    background-image: url('../img/pencil_ruler.png');
+}
+
+.slide_box .slide_icon.puzzle{
+    background-image: url('../img/puzzle.png');
+}
+
+.about_box .slide_box .slide_icon.code{
+    background-image: url('../img/code.png');
+}
+
+.slide_box:has(.slide_icon.star){
+    background-color: #B8B9E3;
+}
+
+.slide_box:has(.slide_icon.rocket){
+    background-color: #FFC18F;
+}
+
+.slide_box:has(.slide_icon.bulb){
+    background-color: #FFD76A;
+}
+
+.slide_box:has(.slide_icon.pencil){
+    background-color: #93DCE4;
+}
+
+.slide_box:has(.slide_icon.puzzle){
+    background-color: #FFB3AD;
+}
+
+.slide_box:has(.slide_icon.code){
+    background-color: #AEBBD0;
 }
 
 #project i {
@@ -1089,4 +1248,215 @@ svg.arch {
 #portfolio .website:hover {
     transform: scale(1.05);
     transition: all .3s;
+}
+
+.contact_modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+}
+
+.contact_modal.on {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal_content {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    background: #FBFBF9;
+    text-align: center;
+    transform: translateY(20px);
+    transition: transform .3s ease;
+}
+
+.contact_modal.on .modal_content {
+    transform: translateY(0);
+}
+
+.modal_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal_header .state {
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding-left: 0.8rem;
+}
+
+.modal_header .state::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    background: #22C55E;
+    border-radius: 0.5rem;
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+}
+
+.modal_close {
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.contact_modal h2 {
+    font-family: "온글잎 바닷바람";
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 1rem 0 0.5rem 0;
+    text-align: left;
+}
+
+.contact_modal h2 span {
+    color: #f04830;
+}
+
+.contact_modal p {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+
+.contact_email {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+    background: #F3F3F1;
+}
+
+.email_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 0;
+}
+
+.email_label {
+    font-size: 0.75rem;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-align: left;
+}
+
+.email_address {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #29292B;
+    overflow-wrap: anywhere;
+}
+
+.email_copy {
+    flex-shrink: 0;
+    padding: 0.65rem 1rem;
+    border: 0;
+    border-radius: 6px;
+    background: #29292B;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.email_copy:hover {
+    background: #444446;
+}
+
+.email_copy.copied {
+    background: #22C55E;
+}
+
+.contact_links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.contact_link {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .3s ease,
+                border-color .3s ease,
+                transform .3s ease;
+}
+
+.contact_link.mail {
+    background: #F04830;
+    color: #fff;
+}
+
+.contact_link.mail:hover {
+    background: #D83C27;
+}
+
+.contact_link.github {
+    border-color: #D8D8D8;
+    background: #fff;
+    color: #29292B;
+}
+
+.contact_link.github:hover {
+    border-color: #29292B;
+    background: #F3F3F1;
+}
+
+.contact_link .link_arrow {
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform .3s ease;
+}
+
+.contact_link:hover .link_arrow {
+    transform: translate(3px, -3px);
+}
+
+@media (max-width: 400px) {
+    .contact_links {
+        flex-direction: column;
+    }
 }
